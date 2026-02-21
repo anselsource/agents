@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "forecast",
-      "source": "forecast",
+      "source": "./forecast",
       "description": "Adds a /forecast skill for creating demand forecasts"
     }
   ]
