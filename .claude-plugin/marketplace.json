@@ -1,0 +1,17 @@
+{
+  "name": "ansel",
+  "owner": {
+    "name": "Ansel Intelligence LLC",
+  },
+  "metadata": {
+    "version": "0.1.0",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "forecast",
+      "source": "forecast",
+      "description": "Adds a /forecast skill for creating demand forecasts"
+    }
+  ]
+}
