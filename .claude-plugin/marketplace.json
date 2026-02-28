@@ -4,13 +4,12 @@
     "name": "Ansel Intelligence LLC"
   },
   "metadata": {
-    "version": "0.1.0",
-    "pluginRoot": "./plugins"
+    "version": "0.1.0"
   },
   "plugins": [
     {
       "name": "forecast",
-      "source": "./forecast",
+      "source": "./plugins/forecast",
       "version": "0.1.5",
       "description": "Adds a /forecast skill for creating demand forecasts"
     }
