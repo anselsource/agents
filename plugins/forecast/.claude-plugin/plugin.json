@@ -1,0 +1,4 @@
+{
+  "name": "demand-forecast",
+  "description": "Adds a /forecast skill for creating demand forecasts"
+}
