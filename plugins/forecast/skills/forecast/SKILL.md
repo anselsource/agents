@@ -1,28 +1,35 @@
 ---
-description: Create a demand forecast from a user-provided data file
+description: Create demand forecasts with auditable artifacts from user-provided data files
 ---
 
-To create a forecast:
-
-1. Ask the user for the path to their data file (CSV or Excel)
-2. Write a forecast script and run it with `uv run --with ansel-sh`:
-
+In a sandbox get started with
 ```bash
 uv run --with ansel-sh python forecast.py
 ```
 
-Where `forecast.py` contains:
+# User-provided data and source files
+
+ansel-sh auto-discovers CSV files, first from `./data` then from cwd. You may optionally specify a directory to discover files.
 
 ```python
-import asyncio
-from ansel_sh import File, create_forecast
+from ansel_sh import forecasts
 
-file = File(uri="file:///path/to/data.csv", name="data.csv", created_by="user")
-forecast = asyncio.run(create_forecast(files=file))
-for item in forecast.items:
-    print(f"{item.date}: {item.value}")
+results = forecasts(data_dir="/path/to/data")
 ```
 
-Replace the file path with the user's actual data file. No project setup or venv required — just `uv`.
+## Claude Cowork
 
-The user must provide their own data file containing historical demand data.
+User uploads land in `./uploads`. That's a good place to start.
+
+## Reuse classified files
+
+You may optionally reuse classified files across multiple forecasting runs.
+
+```python
+from ansel_sh import files, forecasts
+
+classified = files()
+
+one = forecasts(classified)
+two = forecasts(classified)
+```

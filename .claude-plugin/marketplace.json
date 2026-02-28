@@ -11,6 +11,7 @@
     {
       "name": "forecast",
       "source": "./forecast",
+      "version": "0.1.4",
       "description": "Adds a /forecast skill for creating demand forecasts"
     }
   ]
