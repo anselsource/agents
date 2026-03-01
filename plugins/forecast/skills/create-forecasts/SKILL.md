@@ -33,3 +33,14 @@ classified = files()
 one = forecasts(classified)
 two = forecasts(classified)
 ```
+
+# Auditable output artifacts
+
+All output artifacts are written to `.ansel/<run_id>/` in the cwd. Each run gets an auto-incrementing ID. Artifacts you may find include:
+
+- `files_manifest.csv` — classified input files
+- `series_manifest.csv` — extracted time series
+- `training_snapshot.csv` / `testing_snapshot.csv` — model training and testing data
+- `model_instructions.md` — model configuration and instructions
+- `target_snapshot.csv` — forecast target data
+- `forecast_result.csv` — the final forecast output

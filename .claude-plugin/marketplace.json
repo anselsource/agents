@@ -10,7 +10,7 @@
     {
       "name": "demand-forecast",
       "source": "./plugins/forecast",
-      "version": "0.1.5",
+      "version": "0.1.6",
       "description": "Adds a /create-forecasts skill for creating demand forecasts"
     }
   ]
