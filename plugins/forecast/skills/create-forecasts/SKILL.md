@@ -34,6 +34,17 @@ one = forecasts(classified)
 two = forecasts(classified)
 ```
 
+# Running background tasks
+
+```bash
+bash -c 'your-command' > /tmp/task.log 2>&1 &
+echo $! > /tmp/task.pid
+
+# Check status, progress, logs
+kill -0 $(cat /tmp/task.pid) 2>/dev/null && echo "Running" || echo "Done"
+cat /tmp/task.log
+```
+
 # Auditable output artifacts
 
 All output artifacts are written to `.ansel/<run_id>/` in the cwd. Each run gets an auto-incrementing ID. Artifacts you may find include:
